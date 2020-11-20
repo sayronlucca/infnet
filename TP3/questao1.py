@@ -14,39 +14,39 @@
 
 #valor = 1.99 # Valor numérico 
 #valor = str(valor) # Converte o valor para uma string
-#valor.replace('.', ',') # Substitui pontos por vírgulas
-#print(valor) # Imprimirá 1,99
+#print(valor.replace('.', ',')) # Substitui pontos por vírgulas
+# Imprimirá 1,99
 
 
 def divideconta (valor,pessoas,taxa):
-    taxa = taxa/100
-    conta = (valor*taxa)/pessoas
-    return conta
+    n = taxa/100
+    totaltaxa = (valor*n)
+    total = valor + totaltaxa
+    return total
 
-conta = float(input("Informe o valor da conta"))
+conta = float(input("Informe o valor da conta: "))
 
-pessoas = int(input("Informe a quantidade de pessoas"))
-
-if pessoas == 0:
-    print("Valor inválido ")
-else:
-    
-    
-taxa = int(input("Informe a taxa de serviço do garçom"))
-
-if taxa < 0 and taxa > 100:
-    print("Valor inválido")
-else:
-    
+npessoas = False 
+while not npessoas:
+    pessoas = int(input("Digite o número de pessoas: "))
+    if pessoas > 0:
+        npessoas = True 
+    else:
+        print("Valor inválido")
     
 
 
-    
+taxa_garcom = False
+while not taxa_garcom:
+    taxa = int(input("Informe a taxa de serviço do garçom: "))
+    if taxa > 0 and taxa <= 100:
+        taxa_garcom = True
+    else:    
+        print("Valor inválido")
 
 
+valortotal = divideconta(conta,pessoas,taxa)
+valortotal = str(valortotal)
+print(valortotal.replace('.',','))
 
-
-
-
-
-
+print("O valor total é R$: ", valortotal.replace('.',','))
