@@ -23,23 +23,21 @@ def divideconta (valor,pessoas,taxa):
     conta = (valor*taxa)/pessoas
     return conta
 
-conta = print(float(input("Informe o valor da conta")))
+conta = float(input("Informe o valor da conta"))
 
-pessoas = print(int(input("Informe a quantidade de pessoas")))
+pessoas = int(input("Informe a quantidade de pessoas"))
 
 if pessoas == 0:
     print("Valor inválido ")
-    break
 else:
-    continue
+    
+    
+taxa = int(input("Informe a taxa de serviço do garçom"))
 
-taxa = print(int(input("Informe a taxa de serviço do garçom")))
-
-if taxa < 0 and > 100:
+if taxa < 0 and taxa > 100:
     print("Valor inválido")
-    break
 else:
-    continue
+    
     
 
 
