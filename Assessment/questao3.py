@@ -18,3 +18,39 @@
 
 
 
+def diagnostico_gastos(renda_mensal, gasto_moradia, gasto_educacao, gasto_transporte):
+
+  max_gasto_moradia = renda_mensal * 0.3
+  max_gasto_educacao = renda_mensal * 0.2
+  max_gasto_transporte = renda_mensal * 0.15
+
+  perc_moradia = (gasto_moradia / renda_mensal) * 100
+  perc_educacao = (gasto_educacao / renda_mensal) * 100
+  perc_transporte = (gasto_transporte / renda_mensal) * 100
+
+
+  diagnostico = ""
+
+  if gasto_moradia <= max_gasto_moradia:
+    diagnostico += f"Seus gastos estão dentro da margem recomendada.\n"
+  else: 
+    diagnostico += f"Os gastos totais com moradia comprometem {perc_moradia}%, O máximo recomendado é de 30%. Portanto, idealmente, o máximo de sua renda comprometida com moradia deveria ser de R${max_gasto_moradia}.\n"
+
+  if gasto_educacao <= max_gasto_educacao:
+    diagnostico += f"Seus gastos estão dentro da margem recomendada.\n"
+  else:
+    diagnostico += f"Os gastos totais com educação comprometem {perc_educacao}%, O máximo recomendado é de 20%. Portanto, idealmente, o máximo de sua renda comprometida com educação deveria ser de R${max_gasto_educacao}.\n"
+
+  if gasto_transporte <= max_gasto_transporte:
+    diagnostico += f"Seus gastos estão dentro da margem recomendada.\n"
+  else:
+    diagnostico += f"Os gastos totais com transporte comprometem {perc_transporte}%, O máximo recomendado é de 15%. Portanto, idealmente, o máximo de sua renda comprometida com transporte deveria ser de R${max_gasto_transporte}.\n"
+
+  return diagnostico
+
+renda_mensal = float(input("Informe a renda mensal: R$"))
+gasto_moradia = float(input("Informe o gasto com moradia: R$"))
+gasto_educacao = float(input("Informe o gasto com educação: R$"))
+gasto_transporte = float(input("Informe o gasto com transporte: R$"))
+diagnostico = diagnostico_gastos(renda_mensal, gasto_moradia, gasto_educacao, gasto_transporte)
+print(diagnostico)
