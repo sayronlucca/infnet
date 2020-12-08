@@ -33,14 +33,16 @@
 
 def calcular_rendimento(valor_investimento, perc_rendimento, valor_aporte, num_periodos):
   print(f"Valor inicial: R$ {valor_investimento:.2f}.")
-  valor_inicial = (valor_investimento * perc_rendimento) + valor_aporte
+  valor = valor_investimento
+  i = 0
   for i in range(num_periodos):
-    valor_rendimento = (valor_inicial + valor_aporte) * perc_rendimento
-    print(f"Após \t {i+1} período(s), o montante será de R$ {valor_rendimento:.2f}")
+    valor = valor + (valor * perc_rendimento / 100) + valor_aporte
+    print(f"Após \t {i+1} período(s), o montante será de R$ {valor:.2f}")
+  return valor
 
 valor_investimento = float(input("Valor inicial do investimento: R$ "))
-perc_rendimento = float(input("Informe o rendimento por período"))
+perc_rendimento = float(input("Informe o rendimento por período (%) "))
 valor_aporte = float(input("Informe o valor do aporte em cada período: R$ "))
-num_periodos = float(input("Informe a quntidade de períodos: R$ "))
+num_periodos = int(input("Informe a quantidade de períodos: R$ "))
 
 calcular_rendimento(valor_investimento, perc_rendimento, valor_aporte, num_periodos)
