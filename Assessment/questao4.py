@@ -31,18 +31,28 @@
 
 #Crie uma função que exiba um gráfico da evolução do valor acumulado, tendo como eixo das abscissas (horizontal) o número de períodos e, no eixo das ordenadas (vertical), o valor acumulado, em reais.
 
+import matplotlib.pyplot as plt
+
+
+
 def calcular_rendimento(valor_investimento, perc_rendimento, valor_aporte, num_periodos):
   print(f"Valor inicial: R$ {valor_investimento:.2f}.")
   valor = valor_investimento
   i = 0
+  x=[i]
+  y=[]
   for i in range(num_periodos):
     valor = valor + (valor * perc_rendimento / 100) + valor_aporte
+    x=[i+1]
+    y=[valor]
+    plt.xlabel("Períodos")
+    plt.ylabel("Valor Acumulado")
+    plt.plot(x,y)
     print(f"Após \t {i+1} período(s), o montante será de R$ {valor:.2f}")
-  return valor
 
 valor_investimento = float(input("Valor inicial do investimento: R$ "))
 perc_rendimento = float(input("Informe o rendimento por período (%) "))
-valor_aporte = float(input("Informe o valor do aporte em cada período: R$ "))
-num_periodos = int(input("Informe a quantidade de períodos: R$ "))
+valor_aporte = float(input("Informe o valor do aporte em cada período R$: "))
+num_periodos = int(input("Informe a quantidade de períodos: "))
 
 calcular_rendimento(valor_investimento, perc_rendimento, valor_aporte, num_periodos)
