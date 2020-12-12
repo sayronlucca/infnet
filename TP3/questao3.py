@@ -16,10 +16,6 @@
 #O(a) vencedor(a) foi Zeugma com nota 9.4!
 
 
-
-
-
-
 nomes = []
 notas = []
 
@@ -36,7 +32,7 @@ def informar_dados():
                 notas.append(nota)
                 nota_valida = True 
             else:
-             print("Idade inválida (deve ser maior ou igual a zero).")
+             print("Nota inválida (deve ser maior ou igual a zero).")
 
 informar_dados()
 

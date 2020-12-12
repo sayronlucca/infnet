@@ -13,4 +13,4 @@ p2=int(input('Informe o peso2:'))
 n3=int(input('Informe a terceira nota:'))
 p3=int(input('Informe o peso3:'))
 
-print(f"a média ponderada é:{(n1*p1+n2*p2+n3*p3)/(p1+p2+p3)}")
+print(f"a média ponderada é: {(n1*p1+n2*p2+n3*p3)/(p1+p2+p3)}")
